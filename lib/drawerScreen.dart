@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teamproject/mainPage.dart';
 import 'configuration.dart';
 import 'search.dart';
 import 'widgets.dart';
@@ -9,6 +10,14 @@ class DrawerScreen extends StatefulWidget {
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
+  Widget showPage = MainPage();
+
+  void page(Widget p) {
+    setState(() {
+      showPage = p;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,6 +27,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+         
           Row(
             children: [
               SizedBox(
